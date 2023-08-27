@@ -5,7 +5,7 @@ import { languages } from '@/data/languages';
 export function LanguageSelector(): JSX.Element {
 	const router = useRouter();
 
-	const onSelectChange = e => {
+	const onSelectChange = (e: any) => {
 		const locale = e.target.value;
 		router.push(router.asPath, router.asPath, {
 			locale,
