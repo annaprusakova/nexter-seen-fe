@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import styles from './languageSelector.module.scss';
 import { languages } from '@/data/languages';
 
 export function LanguageSelector(): JSX.Element {
@@ -14,8 +13,11 @@ export function LanguageSelector(): JSX.Element {
 	};
 
 	return (
-		<div className="relative inline-block">
-			<select className={styles.select} onChange={onSelectChange}>
+		<div className="relative w-40 mr-5">
+			<select
+				className="select select-ghost-error bg-transparent text-main-dark"
+				onChange={onSelectChange}
+			>
 				{languages.map((elem, key) => (
 					<option key={key} value={elem.code}>
 						{elem.name}

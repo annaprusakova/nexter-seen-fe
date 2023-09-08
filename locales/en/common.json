@@ -1,6 +1,8 @@
 {
   "welcome": "Welcome!",
-  "signIn": "Sign In",
+  "home": "Home",
+  "catalog": "Catalog",
+  "signIn": "Log In",
   "email": "Email",
   "firstName": "First Name",
   "lastName": "Last Name",

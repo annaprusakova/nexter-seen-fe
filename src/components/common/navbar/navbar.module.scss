@@ -1,44 +1,23 @@
 .navbarWrapper {
-  background-color: transparent;
+  @apply absolute inset-x-0 top-0 z-50 text-main-dark;
 }
 
-.wrapper {
-  @apply mx-auto max-w-7xl px-2 sm:px-6 lg:px-8;
-}
-
-.menuIconWrapper {
-  @apply relative flex h-16 items-center justify-between;
-}
-
-.menuMobileButton {
-  @apply absolute inset-y-0 left-0 flex items-center md:hidden;
+.nav {
+  @apply flex items-center justify-between p-6 lg:px-8;
 }
 
 .mobileButton {
-  @apply inline-flex items-center justify-center rounded-md p-2 text-main-white
-  hover:bg-main-dark hover:text-main-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-main-white;
+  @apply -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-main-dark;
 }
 
-.logoWrapper {
-  @apply flex flex-1 items-center justify-end md:items-stretch md:justify-start;
+.navItems {
+  @apply hidden lg:flex lg:gap-x-12;
 }
 
-.logo {
-  @apply flex flex-shrink-0 items-center;
+.navItem {
+  @apply text-sm font-semibold leading-6 text-main-dark;
 }
 
-.logoImg {
-  @apply block h-12 w-auto cursor-pointer;
-}
-
-.navbarItemsWrapper {
-  @apply hidden sm:ml-6 md:block;
-}
-
-.navbarItems {
-  @apply flex space-x-4 mr-8;
-}
-
-.language {
-  @apply absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0;
+.rightSection {
+  @apply hidden lg:flex lg:flex-1 lg:justify-end lg:items-center;
 }
