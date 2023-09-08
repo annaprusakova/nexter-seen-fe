@@ -9,7 +9,7 @@ import {
 import { SIZE } from '@/components/common/heading/heading.interfaces';
 import styles from './login.module.scss';
 import { Formik, FormikProps } from 'formik';
-import { LoginRequest } from '@/interfaces/request/LoginRequest';
+import { LoginRequest } from '@/dto/request/LoginRequest';
 import { pages } from '@/data/pages';
 import { LoginValidation } from '@/validation/login.validation';
 import useTranslation from 'next-translate/useTranslation';

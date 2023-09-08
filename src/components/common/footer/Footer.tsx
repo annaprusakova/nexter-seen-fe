@@ -1,41 +1,47 @@
-import styles from './footer.module.scss';
-import { AiOutlineTwitter } from '@react-icons/all-files/ai/AiOutlineTwitter';
-import { AiOutlineInstagram } from '@react-icons/all-files/ai/AiOutlineInstagram';
-import { TextLink } from '@/components/common';
-import { AiOutlineCopyrightCircle } from '@react-icons/all-files/ai/AiOutlineCopyrightCircle';
 import useTranslation from 'next-translate/useTranslation';
-import { pages } from '@/data/pages';
+import styles from './footer.module.scss';
 
 export function Footer(): JSX.Element {
 	const { t } = useTranslation('common');
 
 	return (
-		<div className={styles.footer}>
-			<div className={styles.dataWrapper}>
-				<div className={styles.socials}>
-					<AiOutlineTwitter className={styles.icon} />
-					<AiOutlineInstagram className={styles.icon} />
+		<div className="bg-main-color">
+			<div className={styles.footerWrapper}>
+				<div className="text-center">
+					<h3 className="text-3xl mb-3">{t('Download our app')}</h3>
+					<p> Stay fit. All day, every day. </p>
+					<div className="flex justify-center my-10">
+						<div className={styles.appGoogleWrapper}>
+							<img
+								src="https://cdn-icons-png.flaticon.com/512/888/888857.png"
+								className={styles.appLogo}
+								alt={'google play'}
+							/>
+							<div className={styles.storeText}>
+								<p className={styles.downloadOn}>{t('Download on')}</p>
+								<p className={styles.store}> Google Play Store </p>
+							</div>
+						</div>
+						<div className={styles.appAppleWrapper}>
+							<img
+								src="https://cdn-icons-png.flaticon.com/512/888/888841.png"
+								className={styles.appLogo}
+								alt={'apple play'}
+							/>
+							<div className={styles.storeText}>
+								<p className={styles.downloadOn}>{t('Download on')}</p>
+								<p className={styles.store}> Apple Store </p>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div className={styles.infoPages}>
-					<TextLink
-						link={pages[1].route}
-						text={'common:about'}
-						className={styles.linkText}
-					/>
-					<TextLink
-						link={pages[2].route}
-						text={'common:policy'}
-						className={styles.linkText}
-					/>
-					<TextLink
-						link={pages[3].route}
-						text={'common:contact'}
-						className={styles.linkText}
-					/>
-				</div>
-				<div className={styles.rights}>
-					<AiOutlineCopyrightCircle className={styles.iconCopyRights} />
-					<span className={styles.rightsText}>&nbsp;{t('rights')}</span>
+				<div className={styles.infoWrapper}>
+					<p className={styles.copyright}> &copy; Nexter Seen, 2023. </p>
+					<div className="order-1 md:order-2">
+						<span className="px-2">About us</span>
+						<span className="px-2 border-l">Contact us</span>
+						<span className="px-2 border-l">Privacy Policy</span>
+					</div>
 				</div>
 			</div>
 		</div>

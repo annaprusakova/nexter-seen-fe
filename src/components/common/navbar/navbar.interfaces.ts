@@ -1,5 +1,4 @@
-export interface INavbarItem {
-	link: string | null;
-	name: string;
-	setIsOpen?: (value: boolean) => void;
+export interface IMobileMenu {
+	mobileMenuOpen: boolean;
+	setMobileMenuOpen: (value: boolean) => void;
 }

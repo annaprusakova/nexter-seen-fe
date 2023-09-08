@@ -1,53 +1,39 @@
-.home {
-  @apply h-full w-full;
+.homeColorWrapper {
+  @apply bg-main-white;
 }
 
-.firstSection {
-  @apply top-0 w-full h-[39vw] md:h-[29vw] sm:h-[33vw];
+.clipWrapperTop {
+  @apply relative isolate px-6 pt-14 lg:px-8;
 }
 
-.firstPoster, .firstPosterShadow {
-  @apply absolute w-full h-[65vw] left-2/4 top-0 -translate-x-2/4 sm:h-[60vw] md:h-[65vw];
-  z-index: -2;
+.clipWrapperBottom {
+  @apply absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)];
 }
 
-.firstPosterShadow {
-  z-index: -1;
-  background:  linear-gradient(159deg, rgba(0,0,0,0.6153054971988796) 23%, rgba(73,71,74,0.6153054971988796) 45%, rgba(11,11,11,1) 86%);
+.clipTop {
+  @apply relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem];
+}
+
+.clipBottom {
+  @apply relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem];
 }
 
 .textWrapper {
-  @apply mt-36 mx-44 flex flex-col justify-center items-center
-  md:mt-20 md:mx-16 sm:mt-6 sm:mx-4 md:text-base sm:text-sm;
+  @apply mx-auto max-w-2xl py-32 sm:py-48 lg:py-56;
 }
 
-.head {
-  @apply text-main-color text-6xl lg:text-6xl md:text-4xl sm:text-4xl;
+.boldText {
+  @apply text-4xl font-bold tracking-tight text-main-dark sm:text-6xl;
 }
 
 .text {
-  @apply text-main-white text-lg lg:text-lg mx-36 md:mx-12 sm:mt-8 sm:mx-4 sm:text-base;
+  @apply mt-6 text-lg leading-8 text-main-dark;
 }
 
-.secondSection {
-  @apply relative w-full h-[60vw] md:h-[40vw] sm:h-[60vw] bg-main-color;
+.homeBlockWrapper {
+  @apply relative isolate overflow-hidden bg-main-dark py-24 sm:py-32;
 }
 
-.thirdSection {
-  @apply relative w-full h-[43vw] lg:h-[43vw] md:h-[39vw] sm:h-[42vw];
-}
-
-.secondPoster, .secondPosterShadow {
-  @apply relative w-full;
-}
-
-.secondPosterShadow {
-  @apply absolute top-0 h-[42vw];
-  z-index: 1;
-  background:  linear-gradient(159deg, rgba(0,0,0,0.6153054971988796) 23%, rgba(73,71,74,0.6153054971988796) 45%, rgba(11,11,11,1) 86%);
-}
-
-.mockupWrapper {
-    @apply absolute top-0 w-full h-[42vw] flex justify-center items-center;
-    z-index: 2;
+.poster {
+  @apply absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center;
 }

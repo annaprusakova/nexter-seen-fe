@@ -5,10 +5,7 @@ export const SignupValidation = Yup.object().shape({
 	username: Yup.string().required('Required'),
 	password: Yup.string()
 		.required('Required')
-		.matches(
-			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
-			'Should be at least 8 characters'
-		),
+		.min(8, 'Should be at least 8 characters'),
 	confirmPassword: Yup.string().test(
 		'passwords-match',
 		'Passwords must match',

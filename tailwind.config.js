@@ -21,12 +21,13 @@ module.exports = {
             'main-white': '#edf2f4',
             'main-brown': '#2A2C25',
             'main-brown-light': '#CCC5B9',
-            'red': '#DF5F5F'
+            'red': '#DF5F5F',
+            'transparent': 'transparent'
         },
         fontFamily: {
             sans: ['Roboto', 'sans-serif'],
         }
     },
-    plugins: [],
+    plugins: [require("rippleui")]
 }
 

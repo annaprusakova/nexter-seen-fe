@@ -1,8 +1,15 @@
-.iconButton {
-  @apply inline-flex items-center justify-center rounded-md p-2 text-main-white hover:bg-main-dark
-  hover:text-main-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-main-white;
+.dialogWrapper {
+  @apply fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-white px-6 py-6 sm:max-w-sm sm:ring-1;
 }
 
-.mobileMenu {
-  @apply space-y-1 px-2 pb-3 pt-2;
+.closeButton {
+  @apply -m-2.5 rounded-md p-2.5 text-main-dark;
+}
+
+.navItem {
+  @apply -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-main-dark hover:bg-main-color;
+}
+
+.navLogin {
+  @apply -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-main-dark hover:bg-main-color;
 }
