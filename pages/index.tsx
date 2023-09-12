@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Layout } from '@/components/common';
 import { HomePage } from '@/components/pages/home/Home.page';
+import { Footer } from '@/components/common/footer/Footer';
 
 export default function Home() {
 	return (
@@ -14,6 +15,9 @@ export default function Home() {
 			<Layout title={'Nexter seen'}>
 				<HomePage />
 			</Layout>
+			<footer>
+				<Footer />
+			</footer>
 		</>
 	);
 }

@@ -1,9 +1,5 @@
 .wrapper {
-  @apply fixed hidden top-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto;
-}
-
-.wrapper.isOpen {
-  @apply block;
+  @apply z-50 w-full p-4 overflow-x-hidden overflow-y-auto;
 }
 
 .closeButton {
