@@ -5,6 +5,7 @@
 .closeButton {
   @apply absolute top-3 right-2.5 text-main-dark hover:bg-main-brown
   hover:text-main-white rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-main-dark dark:hover:text-main-white;
+
   background: transparent;
 }
 

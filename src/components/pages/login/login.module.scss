@@ -1,5 +1,6 @@
 .loginWrapper {
   @apply flex flex-col px-10 h-screen justify-center;
+
   height: 95vh;
 }
 
@@ -21,5 +22,6 @@
 
 .registerLink {
   font-weight: 600 !important;
+
   @apply text-base;
 }

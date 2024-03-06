@@ -8,7 +8,6 @@
     "start": "NODE_ENV=production next start",
     "eslint:check": "next lint",
     "eslint:fix": "eslint \"**/*.{jsx,ts,tsx}\" --fix",
-    "stylelint:fix": "stylelint \"**/*.scss\" --fix",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
