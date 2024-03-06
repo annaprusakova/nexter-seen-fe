@@ -1,29 +1,27 @@
-import { useRouter } from 'next/router';
-import { languages } from '@/data/languages';
+import { useRouter } from "next/router";
+import { languages } from "@/data/languages";
+import styles from "./languageSelector.module.scss";
 
 export function LanguageSelector(): JSX.Element {
-	const router = useRouter();
+  const router = useRouter();
 
-	const onSelectChange = (e: any) => {
-		const locale = e.target.value;
-		router.push(router.asPath, router.asPath, {
-			locale,
-			scroll: false
-		});
-	};
+  const onSelectChange = (e: any) => {
+    const locale = e.target.value;
+    router.push(router.asPath, router.asPath, {
+      locale,
+      scroll: false,
+    });
+  };
 
-	return (
-		<div className="relative w-40 mr-5">
-			<select
-				className="select select-ghost-error bg-transparent text-main-dark"
-				onChange={onSelectChange}
-			>
-				{languages.map((elem, key) => (
-					<option key={key} value={elem.code}>
-						{elem.name}
-					</option>
-				))}
-			</select>
-		</div>
-	);
+  return (
+    <div className={styles.languageWrapper}>
+      <select className={styles.selector} onChange={onSelectChange}>
+        {languages.map((elem, key) => (
+          <option key={key} value={elem.code}>
+            {elem.name}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 }

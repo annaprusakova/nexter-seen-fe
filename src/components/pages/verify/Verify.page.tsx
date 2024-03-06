@@ -7,6 +7,7 @@ export function VerifyPage(): JSX.Element {
 	const router = useRouter();
 	const { enqueueSnackbar } = useSnackbar();
 	const token = router.query.verifyToken;
+
 	const verifyUser = async () => {
 		const response = await verifyRequest(token as string);
 		if (response && response.status === 201) {

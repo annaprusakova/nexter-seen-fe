@@ -3,11 +3,11 @@
 }
 
 .appGoogleWrapper {
-  @apply flex items-center border w-auto rounded-lg px-4 py-2 w-52 mx-2;
+  @apply flex items-center border w-auto rounded-lg px-4 py-2 w-52 mx-2 cursor-pointer;
 }
 
 .appAppleWrapper {
-  @apply flex items-center border w-auto rounded-lg px-4 py-2 w-44 mx-2;
+  @apply flex items-center border w-auto rounded-lg px-4 py-2 w-44 mx-2 cursor-pointer;
 }
 
 .storeText {

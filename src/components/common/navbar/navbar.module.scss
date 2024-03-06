@@ -15,7 +15,7 @@
 }
 
 .navItem {
-  @apply text-sm font-semibold leading-6 text-main-dark;
+  @apply text-base font-semibold leading-6 text-main-dark hover:text-main-color;
 }
 
 .rightSection {
