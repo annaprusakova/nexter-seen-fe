@@ -1,5 +1,17 @@
+.dialog {
+  @apply lg:hidden;
+}
+
+.dialogPanelWrapper {
+  @apply fixed inset-0 z-50;
+}
+
 .dialogWrapper {
   @apply fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-white px-6 py-6 sm:max-w-sm sm:ring-1;
+}
+
+.logo {
+  @apply flex items-center justify-between;
 }
 
 .closeButton {

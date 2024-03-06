@@ -16,13 +16,13 @@ export function MobileMenu({
 	return (
 		<Dialog
 			as="div"
-			className="lg:hidden"
+			className={styles.dialog}
 			open={mobileMenuOpen}
 			onClose={setMobileMenuOpen}
 		>
-			<div className="fixed inset-0 z-50" />
+			<div className={styles.dialogPanelWrapper} />
 			<Dialog.Panel className={styles.dialogWrapper}>
-				<div className="flex items-center justify-between">
+				<div className={styles.logo}>
 					<a href="#" className="-m-1.5 p-1.5">
 						<Image className={styles.logoImg} src={MiniLogo} alt={'logo'} />
 					</a>
@@ -36,15 +36,15 @@ export function MobileMenu({
 					</button>
 				</div>
 				<div className="mt-6 flow-root">
-					<div className="-my-6 divide-y divide-gray-500/10">
-						<div className="space-y-2 py-6">
+					<div className="-my-6">
+						<div className="">
 							{navbarItemsForNoLoginUser.map(item => (
 								<a href={item.route} key={item.name} className={styles.navItem}>
 									{t(`${item.name}`)}
 								</a>
 							))}
 						</div>
-						<div className="py-6">
+						<div className="mb-4">
 							<a href="/login" className={styles.navLogin}>
 								{t('signIn')}
 							</a>

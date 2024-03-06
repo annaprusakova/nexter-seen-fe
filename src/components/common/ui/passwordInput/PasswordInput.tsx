@@ -1,5 +1,5 @@
 import styles from './passwordInput.module.scss';
-import { IPasswordInput } from '@/components/common/passwordInput/passwordInput.interfaces';
+import { IPasswordInput } from './passwordInput.interfaces';
 import { useState } from 'react';
 import { AiOutlineEyeInvisible } from '@react-icons/all-files/ai/AiOutlineEyeInvisible';
 import { AiFillEyeInvisible } from '@react-icons/all-files/ai/AiFillEyeInvisible';

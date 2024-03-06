@@ -1,5 +1,5 @@
 import styles from './heading.module.scss';
-import { IHeading, SIZE } from '@/components/common/heading/heading.interfaces';
+import { IHeading, SIZE } from './heading.interfaces';
 
 export function Heading({ size, text }: IHeading): JSX.Element {
 	return (

@@ -1,5 +1,5 @@
 import styles from './textInput.module.scss';
-import { ITextInput } from '@/components/common/textInput/textInput.interfaces';
+import { ITextInput } from './textInput.interfaces';
 import cn from 'classnames';
 
 export function TextInput({

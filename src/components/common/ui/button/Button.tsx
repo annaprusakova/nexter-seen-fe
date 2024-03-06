@@ -1,5 +1,5 @@
 import styles from './button.module.scss';
-import { IButton } from '@/components/common/button/button.interfaces';
+import { IButton } from '@/components/common/ui/button/button.interfaces';
 
 export function Button({ text, onClick }: IButton): JSX.Element {
 	return (

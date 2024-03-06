@@ -1,5 +1,5 @@
 import styles from './textLink.module.scss';
-import { ITextLink } from '@/components/common/textLink/textLink.interfaces';
+import { ITextLink } from './textLink.interfaces';
 import cn from 'classnames';
 import useTranslation from 'next-translate/useTranslation';
 

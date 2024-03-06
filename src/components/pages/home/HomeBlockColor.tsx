@@ -19,12 +19,11 @@ export function HomeBlockColor(): JSX.Element {
 				<div className={styles.textWrapper}>
 					<div className="text-center">
 						<h1 className={styles.boldText}>
-							Data to enrich your online business
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit
 						</h1>
 						<p className={styles.text}>
-							Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-							lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-							fugiat aliqua.
+							Venenatis tellus in metus vulputate. Nec feugiat in fermentum
+							posuere. Dui vivamus arcu felis bibendum ut.
 						</p>
 					</div>
 				</div>

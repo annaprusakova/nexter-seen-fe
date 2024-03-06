@@ -1,5 +1,5 @@
 import styles from './checkbox.module.scss';
-import { ICheckbox } from '@/components/common/checkbox/checkbox.interfaces';
+import { ICheckbox } from '@/components/common/ui/checkbox/checkbox.interfaces';
 
 export function Checkbox({
 	value = false,

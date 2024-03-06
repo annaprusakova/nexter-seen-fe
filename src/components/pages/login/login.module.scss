@@ -1,5 +1,6 @@
 .loginWrapper {
   @apply flex flex-col px-10 h-screen justify-center;
+
   height: 95vh;
 }
 
@@ -8,7 +9,7 @@
 }
 
 .welcomeTitle {
-  @apply font-light text-2xl mb-6;
+  @apply text-2xl mb-6 text-main-dark;
 }
 
 .forgotWrapper {
@@ -21,5 +22,6 @@
 
 .registerLink {
   font-weight: 600 !important;
+
   @apply text-base;
 }
