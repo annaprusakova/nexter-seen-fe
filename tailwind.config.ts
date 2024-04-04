@@ -14,7 +14,29 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    screens: {
+      sm: '380px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          'primary': '#AD88C6',
+          'secondary': '#E1AFD1',
+          'accent': '#F2BED1',
+          'neutral': '#4C4452',
+          'base-100': '#FFF6FF',
+          'info': '#0086C8',
+          'success': '#007162',
+          'warning': '#FFAE87',
+          'error': '#cf003b',
+        }
+      }]
+  },
 };
 export default config;
