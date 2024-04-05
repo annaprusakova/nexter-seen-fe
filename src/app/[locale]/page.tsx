@@ -1,6 +1,5 @@
-'use client';
-import Poster from '../../public/poster.png';
-import Poster2 from '../../public/poster2.png';
+import Poster from '../../../public/poster.png';
+import Poster2 from '../../../public/poster2.png';
 import { HomeBlockColor } from '@/components/home/HomeBlockColor';
 import { HomeBlockImage } from '@/components/home/HomeBlockImage';
 

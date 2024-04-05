@@ -6,6 +6,7 @@ import cn from 'classnames';
 import Logo from '../../../public/mini_logo.svg';
 import Image from 'next/image';
 import { LanguageSelector } from '@/components/navbar/languageSelector/LanguageSelector';
+import NavMenu from '@/components/navbar/NavMenu';
 import { navigationMain, navigationNotUser } from '@/data/navMenuData';
 
 export default function Navbar() {
@@ -44,21 +45,7 @@ export default function Navbar() {
 								</a>
 								<div className="hidden sm:ml-6 sm:block">
 									<div className="flex space-x-4">
-										{navigationMain.map(item => (
-											<a
-												key={item.name}
-												href={item.href}
-												className={cn(
-													item.current
-														? 'bg-primary text-white'
-														: 'text-neutral hover:bg-primary hover:text-white',
-													'rounded-md px-3 py-2 text-sm font-medium'
-												)}
-												aria-current={item.current ? 'page' : undefined}
-											>
-												{item.name}
-											</a>
-										))}
+										<NavMenu menuList={navigationMain} />
 									</div>
 								</div>
 							</div>
@@ -132,21 +119,7 @@ export default function Navbar() {
 								) : (
 									<div className="hidden sm:ml-6 sm:block mr-3">
 										<div className="flex space-x-4">
-											{navigationNotUser.map(item => (
-												<a
-													key={item.name}
-													href={item.href}
-													className={cn(
-														item.current
-															? 'bg-primary text-white'
-															: 'text-neutral hover:bg-primary hover:text-white',
-														'rounded-md px-3 py-2 text-sm font-medium'
-													)}
-													aria-current={item.current ? 'page' : undefined}
-												>
-													{item.name}
-												</a>
-											))}
+											<NavMenu menuList={navigationNotUser} />
 										</div>
 									</div>
 								)}
@@ -157,22 +130,7 @@ export default function Navbar() {
 
 					<Disclosure.Panel className="sm:hidden">
 						<div className="space-y-1 px-2 pb-3 pt-2">
-							{navigationMain.map(item => (
-								<Disclosure.Button
-									key={item.name}
-									as="a"
-									href={item.href}
-									className={cn(
-										item.current
-											? 'bg-gray-900 text-white'
-											: 'text-gray-300 hover:bg-gray-700 hover:text-white',
-										'block rounded-md px-3 py-2 text-base font-medium'
-									)}
-									aria-current={item.current ? 'page' : undefined}
-								>
-									{item.name}
-								</Disclosure.Button>
-							))}
+							<NavMenu menuList={navigationMain} />
 						</div>
 					</Disclosure.Panel>
 				</>
