@@ -1,0 +1,24 @@
+.inputWrapper {
+  @apply h-20 flex flex-col;
+}
+
+.inputWrapper.error {
+  @apply mb-3;
+}
+
+.inputLabel {
+  @apply form-control w-full max-w-max;
+}
+
+.input {
+  @apply  w-full;
+}
+
+.input.error {
+  @apply border-error;
+}
+
+.inputError {
+  @apply flex items-center font-medium tracking-wide text-error text-xs mt-1 ml-1;
+}
+

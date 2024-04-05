@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { IButton } from '@/components/ui/button/button.interfaces';
 
-export function Button({ text, onClick, className }: IButton): JSX.Element {
+export function Button({ text, onClick, className }: IButton) {
 	return (
 		<button
 			className={cn(
