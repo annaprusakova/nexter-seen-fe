@@ -1,0 +1,7 @@
+.footer {
+  @apply items-center p-4 bg-base-100 text-neutral;
+}
+
+.nav {
+  @apply grid-flow-col gap-4 md:place-self-center md:justify-self-end;
+}
