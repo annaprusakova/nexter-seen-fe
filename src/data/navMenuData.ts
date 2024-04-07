@@ -4,6 +4,6 @@ export const navigationMain = [
 ];
 
 export const navigationNotUser = [
-	{ name: 'signIn', href: '/sign-in', current: false },
+	{ name: 'signIn', href: '/signin', current: false },
 	{ name: 'createAccount', href: '/register', current: false }
 ];

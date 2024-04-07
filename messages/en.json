@@ -4,5 +4,11 @@
     "tvShows": "TV shows",
     "signIn": "Sign In",
     "createAccount": "Create account"
+  },
+  "Signin": {
+    "signin": "Sign In",
+    "signinTitle": "Sign in to your account",
+    "email": "Email",
+    "enterYourEmail": "Enter your email"
   }
 }

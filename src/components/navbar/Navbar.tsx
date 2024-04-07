@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import cn from 'classnames';
 import Logo from '../../../public/mini_logo.svg';
@@ -8,13 +8,28 @@ import Image from 'next/image';
 import { LanguageSelector } from '@/components/navbar/languageSelector/LanguageSelector';
 import NavMenu from '@/components/navbar/NavMenu';
 import { navigationMain, navigationNotUser } from '@/data/navMenuData';
+import { Bars4Icon, XMarkIcon } from '@heroicons/react/16/solid';
+import NavMenuMobile from '@/components/navbar/NavMenuMobile';
+import styles from './navbar.module.scss';
 
 export default function Navbar() {
 	const isLogin = false;
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+
+	useEffect(() => {
+		if (isMobileMenuOpen) {
+			const body = document.body;
+			body.classList.toggle('overflow-hidden');
+		} else {
+			const body = document.body;
+			body.classList.toggle('overflow-hidden', false);
+		}
+	}, [isMobileMenuOpen]);
+
 	return (
 		<Disclosure
 			as="nav"
-			className="bg-transparent absolute inset-x-0 top-0 z-50"
+			className={`${isMobileMenuOpen ? 'bg-base-100' : 'bg-transparent'} absolute inset-x-0 top-0 z-50`}
 		>
 			{({ open }) => (
 				<>
@@ -22,21 +37,26 @@ export default function Navbar() {
 						<div className="relative flex h-16 items-center justify-between">
 							<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
 								{/* Mobile menu button*/}
-								<Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+								<Disclosure.Button
+									className={styles.mobileMenuButton}
+									onClick={() => {
+										setIsMobileMenuOpen(!open);
+									}}
+								>
 									<span className="absolute -inset-0.5" />
 									<span className="sr-only">Open main menu</span>
 									{open ? (
 										<div className="block h-6 w-6" aria-hidden="true">
-											a
+											<XMarkIcon className="block h-6 w-6" aria-hidden="true" />
 										</div>
 									) : (
 										<div className="block h-6 w-6" aria-hidden="true">
-											b
+											<Bars4Icon className="block h-6 w-6" aria-hidden="true" />
 										</div>
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+							<div className={styles.logoWrapper}>
 								<a
 									href={'/'}
 									className="flex flex-shrink-0 items-center cursor-pointer"
@@ -49,12 +69,12 @@ export default function Navbar() {
 									</div>
 								</div>
 							</div>
-							<div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+							<div className={styles.profileWrapper}>
 								{/* Profile dropdown */}
 								{isLogin ? (
 									<Menu as="div" className="relative ml-3 mr-3">
 										<div>
-											<Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+											<Menu.Button className={styles.profileMenuButton}>
 												<span className="absolute -inset-1.5" />
 												<span className="sr-only">Open user menu</span>
 												<img
@@ -73,7 +93,7 @@ export default function Navbar() {
 											leaveFrom="transform opacity-100 scale-100"
 											leaveTo="transform opacity-0 scale-95"
 										>
-											<Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+											<Menu.Items className={styles.profileMenuItems}>
 												<Menu.Item>
 													{({ active }) => (
 														<a
@@ -123,16 +143,13 @@ export default function Navbar() {
 										</div>
 									</div>
 								)}
-								<LanguageSelector />
+								<div className={'hidden sm:block'}>
+									<LanguageSelector />
+								</div>
 							</div>
 						</div>
 					</div>
-
-					<Disclosure.Panel className="sm:hidden">
-						<div className="space-y-1 px-2 pb-3 pt-2">
-							<NavMenu menuList={navigationMain} />
-						</div>
-					</Disclosure.Panel>
+					<NavMenuMobile menuList={[...navigationMain, ...navigationNotUser]} />
 				</>
 			)}
 		</Disclosure>

@@ -1,15 +1,17 @@
 import cn from 'classnames';
 import { NavMenuProps } from '@/components/navbar/navbar.interfaces';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function NavMenu({ menuList }: NavMenuProps) {
 	const t = useTranslations('Navigation');
+	const localActive = useLocale();
+
 	return (
 		<>
 			{menuList.map(item => (
 				<a
 					key={item.name}
-					href={item.href}
+					href={`${localActive}/${item.href}`}
 					className={cn(
 						item.current
 							? 'bg-primary text-white'

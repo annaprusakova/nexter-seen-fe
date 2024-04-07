@@ -2,6 +2,7 @@ import styles from './home.module.scss';
 import { ColorBlock } from '@/components/ui/colorBlock/ColorBlock';
 
 export function HomeBlockColor(): JSX.Element {
+	//TODO: change text
 	return (
 		<ColorBlock>
 			<div className={styles.childWrapper}>

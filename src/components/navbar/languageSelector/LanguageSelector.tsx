@@ -1,18 +1,20 @@
 import { languages } from '@/data/languages';
 import styles from './languageSelector.module.scss';
 import { useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { ChangeEvent, useTransition } from 'react';
 
 export function LanguageSelector() {
 	const [isPending, startTransition] = useTransition();
 	const router = useRouter();
+	const pathname = usePathname();
 	const localActive = useLocale();
 
 	const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		const nextLocale = e.target.value;
+		const updatedPathname = pathname.replace(`/${localActive}`, '');
 		startTransition(() => {
-			router.replace(`/${nextLocale}`);
+			router.replace(`/${nextLocale}${updatedPathname}`);
 		});
 	};
 
