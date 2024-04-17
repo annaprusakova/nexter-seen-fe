@@ -6,9 +6,23 @@
     "createAccount": "Create account"
   },
   "Signin": {
-    "signin": "Sign In",
+    "signIn": "Sign In",
     "signinTitle": "Sign in to your account",
     "email": "Email",
-    "enterYourEmail": "Enter your email"
+    "password": "Password",
+    "enterYourEmail": "Enter your email",
+    "enterYourPassword": "Enter your password"
+  },
+  "Register": {
+    "createAccount": "Create account",
+    "registerTitle": "Join NexterSeen",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "enterYourEmail": "Enter your email",
+    "username": "Username",
+    "enterYourUsername": "Enter your username",
+    "enterYourPassword": "Enter your password",
+    "confirmYourPassword": "Confirm your password"
   }
 }

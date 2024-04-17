@@ -1,13 +1,13 @@
 import type { Meta, StoryFn } from '@storybook/react';
 import { TextInput } from './TextInput';
-import { ITextInput } from './textInput.interfaces';
+import { TextInputProps } from './textInput.props';
 
 export default {
 	title: 'UI/TextInput',
 	component: TextInput
 } as Meta;
 
-const Template: StoryFn<ITextInput> = (args: ITextInput) => (
+const Template: StoryFn<TextInputProps> = (args: TextInputProps) => (
 	<TextInput {...args} />
 );
 

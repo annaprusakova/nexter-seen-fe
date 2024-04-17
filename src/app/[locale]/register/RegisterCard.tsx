@@ -5,21 +5,26 @@ import Logo from '../../../../public/mini_logo.svg';
 import Image from 'next/image';
 import { TextInput } from '@/components/ui/textInput/TextInput';
 import { useFormik } from 'formik';
-import { Login } from '@/dto/Login';
 import { PasswordInput } from '@/components/ui/passwordInput/PasswordInput';
 import { Button } from '@/components/ui/button/Button';
-import { LoginValidation } from '@/validation/login.validation';
+import { Register } from '@/dto/Register';
+import { RegisterValidation } from '@/validation/register.validation';
 
-export default function SignInCard() {
-	const t = useTranslations('Signin');
+export default function RegisterCard() {
+	const t = useTranslations('Register');
 
-	const handleLogin = () => {
+	const handleRegister = () => {
 		// console.log(values);
 	};
-	const formik = useFormik<Login>({
-		initialValues: { email: '', password: '' },
-		validationSchema: LoginValidation,
-		onSubmit: handleLogin
+	const formik = useFormik<Register>({
+		initialValues: {
+			email: '',
+			username: '',
+			password: '',
+			confirmPassword: ''
+		},
+		validationSchema: RegisterValidation,
+		onSubmit: handleRegister
 	});
 
 	return (
@@ -28,7 +33,7 @@ export default function SignInCard() {
 				<div className="flex flex-col items-center justify-around">
 					<Image src={Logo} alt={'logo'} width={50} height={50} />
 					<h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
-						{t('signinTitle')}
+						{t('registerTitle')}
 					</h2>
 				</div>
 				<TextInput
@@ -39,16 +44,32 @@ export default function SignInCard() {
 					onChange={e => formik.handleChange(e)}
 					error={formik.errors.email}
 				/>
+				<TextInput
+					value={formik.values.username}
+					placeholder={t('enterYourUsername')}
+					field={'username'}
+					label={t('username')}
+					onChange={e => formik.handleChange(e)}
+					error={formik.errors.username}
+				/>
 				<PasswordInput
 					value={formik.values.password}
-					placeholder={'Password'}
+					placeholder={t('enterYourPassword')}
 					label={t('password')}
 					error={formik.errors.password}
 					field={'password'}
 					onChange={formik.handleChange}
 				/>
+				<PasswordInput
+					value={formik.values.confirmPassword}
+					placeholder={t('confirmYourPassword')}
+					label={t('confirmPassword')}
+					error={formik.errors.confirmPassword}
+					field={'confirmPassword'}
+					onChange={formik.handleChange}
+				/>
 				<Button
-					text={t('signIn')}
+					text={t('createAccount')}
 					onClick={formik.submitForm}
 					className="mt-6"
 				/>

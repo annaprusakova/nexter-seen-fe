@@ -1,5 +1,5 @@
 import styles from './textInput.module.scss';
-import { ITextInput } from './textInput.interfaces';
+import { TextInputProps } from './textInput.props';
 import cn from 'classnames';
 
 export function TextInput({
@@ -9,21 +9,20 @@ export function TextInput({
 	label,
 	placeholder,
 	error
-}: ITextInput): JSX.Element {
+}: TextInputProps) {
 	return (
-		<div
-			className={cn(styles.inputWrapper, { [styles.error]: Boolean(error) })}
-		>
+		<div className={styles.inputWrapper}>
 			<label className={styles.inputLabel}>
 				<div className="label">
 					<span>{label}</span>
 				</div>
 			</label>
 			<input
+				id={field}
 				value={value}
-				onChange={event => onChange(field, event.target.value)}
+				onChange={event => onChange(event)}
 				placeholder={placeholder}
-				className={cn('input input-bordered', styles.input, {
+				className={cn('input input-bordered input-primary', styles.input, {
 					[styles.error]: Boolean(error)
 				})}
 			/>

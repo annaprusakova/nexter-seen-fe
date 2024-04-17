@@ -3,10 +3,13 @@ import { useLocale, useTranslations } from 'next-intl';
 import { NavMenuProps } from '@/components/navbar/navbar.interfaces';
 import cn from 'classnames';
 import { LanguageSelector } from '@/components/navbar/languageSelector/LanguageSelector';
+import { useSelectedLayoutSegment } from 'next/navigation';
 
 export default function NavMenuMobile({ menuList }: NavMenuProps) {
 	const t = useTranslations('Navigation');
 	const localActive = useLocale();
+	const selectedLayoutSegment = useSelectedLayoutSegment();
+	const pathname = selectedLayoutSegment ? '' : `${localActive}/`;
 
 	return (
 		<Disclosure.Panel className="sm:hidden bg-base-100 h-screen">
@@ -14,7 +17,7 @@ export default function NavMenuMobile({ menuList }: NavMenuProps) {
 				<Disclosure.Button
 					key={item.name}
 					as="a"
-					href={`${localActive}/${item.href}`}
+					href={`${pathname}${item.href}`}
 					className={cn(
 						item.current
 							? 'bg-primary text-white'

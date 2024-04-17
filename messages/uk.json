@@ -9,6 +9,20 @@
     "signIn": "Вхід",
     "signinTitle": "Увійдіть у свій обліковий запис",
     "email": "Адреса електронної пошти",
-    "enterYourEmail": "Введіть вашу електронну адресу"
+    "password": "Пароль",
+    "enterYourEmail": "Введіть вашу електронну адресу",
+    "enterYourPassword": "Введіть ваш пароль"
+  },
+  "Register": {
+      "createAccount": "Створити профіль",
+      "registerTitle": "Приєднуйтесь до NexterSeen",
+      "email": "Адреса електронної пошти",
+      "password": "Пароль",
+      "confirmPassword": "Підтвердити пароль",
+      "enterYourEmail": "Введіть вашу електронну адресу",
+      "username": "Ім'я користувача",
+      "enterYourUsername": "Введіть ім'я користувача",
+      "enterYourPassword": "Введіть ваш пароль",
+      "confirmYourPassword": "Повторно введіть пароль"
   }
 }
